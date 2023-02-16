@@ -1,7 +1,13 @@
 .App {
 	text-align: center;
+}
 
-	button {
+.button {
 		font-weight: bold;
 	}
+
+.add {
+	position: absolute;
+	top: -49px;
+	left: 170px;
 }
