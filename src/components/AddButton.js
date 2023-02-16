@@ -12,7 +12,7 @@ const AddButton = (context) => {
 				setState({ ...state,
 					toDo: [...toDo, { ...currentValue,
 						id: todoManager.addId(context) }] }) }
-			variant="outlined"
+			variant="contained"
 			size="medium"
 		>
 			Add
