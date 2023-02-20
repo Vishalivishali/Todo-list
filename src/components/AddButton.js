@@ -1,18 +1,18 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Button } from '@mui/material';
 import todoManager from '../services/todoManager';
-
 const AddButton = (context) => {
-	const { state, setState } = context;
-	const { toDo, currentValue } = state;
+	const { setState } = context;
 
 	return (
 		<Button
+			className="add"
 			onClick={ () =>
-				setState({ ...state,
-					toDo: [...toDo, { ...currentValue,
-						id: todoManager.addId(context) }] }) }
-			variant="contained"
+				setState((state) => ({ ...state,
+					toDo: todoManager.addId(context) })) }
+			variant="outlined"
+			color="primary"
 			size="medium"
 		>
 			Add

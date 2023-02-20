@@ -1,9 +1,10 @@
 import { rndString } from '@laufire/utils/random';
 
-const addId = ({ state: { currentValue }, config: { idLength }}) =>
-	({ ...currentValue,
-		id: rndString(idLength),
-		isChecked: false });
+const addId = ({ state: { toDo, currentValue }, config: { idLength }}) =>
+	[...toDo,
+		{ name: currentValue,
+			id: rndString(idLength),
+			isChecked: false }];
 
 const remove = ({ state: { toDo }, data: todo }) =>
 	toDo.filter((value) => value.id !== todo.id);
@@ -20,10 +21,13 @@ const toggleIsChecked = (context) => {
 	});
 };
 
+const isItemSelected = ({ state: { currentValue: { id }}}) => !id;
+
 const todoManager = {
 	addId,
 	remove,
 	toggleIsChecked,
+	isItemSelected,
 };
 
 export default todoManager;

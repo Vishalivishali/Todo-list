@@ -7,6 +7,7 @@ const ClearAllButton = (context) => {
 
 	return (
 		<Button
+			className="clearAll"
 			onClick={ () => setState({
 				...state, toDo: toDo.filter((data) => data.isChecked !== true),
 			}) }
