@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
 import './App.scss';
 import AddButton from './components/AddButton';
-import Display from './components/Display';
+import ClearAllButton from './components/ClearAllButton';
+import DisplayBox from './components/DisplayBox.js/DisplayBox';
 import TextBox from './components/TextBox';
 
 const initialState = () => ({
@@ -16,7 +17,8 @@ const App = (context) => {
 	return <div className="App">
 		<TextBox { ...extendedContext }/>
 		<AddButton { ...extendedContext }/>
-		<Display { ...extendedContext }/>
+		<DisplayBox { ...extendedContext }/>
+		<ClearAllButton { ...extendedContext }/>
 	</div>;
 };
 
