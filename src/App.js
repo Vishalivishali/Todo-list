@@ -1,24 +1,23 @@
-import { peek } from '@laufire/utils/debug';
 import { React, useState } from 'react';
 import './App.scss';
-import AddButton from './components/AddButton';
+import Buttons from './components/Buttons';
 import ClearAllButton from './components/ClearAllButton';
 import Display from './components/Display';
 import TextBox from './components/TextBox';
 
 const initialState = () => ({
-	currentValue: '',
+	currentValue: { name: '' },
 	toDo: [],
+	isEdit: false,
 });
 
 const App = (context) => {
 	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...{ ...context, state, setState }};
 
-	peek(state);
 	return <div className="App">
 		<TextBox { ...extendedContext }/>
-		<AddButton { ...extendedContext }/>
+		<Buttons { ...extendedContext }/>
 		<Display { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
 	</div>;
