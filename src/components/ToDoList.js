@@ -4,10 +4,10 @@ import React from 'react';
 import DeleteButton from './DeleteButton';
 import CheckBox from './CheckBox';
 
-const Display = (context) => {
-	const { state: { toDo, isEdit }, setState } = context;
+const TodoList = (context) => {
+	const { state: { toDos, isEdit }, setState } = context;
 
-	return toDo.map((todo, key) =>
+	return toDos.map((todo, key) =>
 		<div key={ key }>
 			<CheckBox { ...{ ...context, data: todo } }/>
 			<Box
@@ -21,4 +21,4 @@ const Display = (context) => {
 		</div>);
 };
 
-export default Display;
+export default TodoList;

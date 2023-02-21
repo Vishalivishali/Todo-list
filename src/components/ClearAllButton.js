@@ -3,13 +3,13 @@ import React from 'react';
 import { Button } from '@mui/material';
 
 const ClearAllButton = (context) => {
-	const { state, setState, state: { toDo }} = context;
+	const { state, setState, state: { toDos }} = context;
 
 	return (
 		<Button
 			className="clearAll"
 			onClick={ () => setState({
-				...state, toDo: toDo.filter((data) => data.isChecked !== true),
+				...state, toDos: toDos.filter((data) => data.isChecked !== true),
 			}) }
 			variant="contained"
 			color="error"

@@ -12,7 +12,7 @@ const CheckBox = (context) => {
 			className="checkbox"
 			onClick={ () => setState({
 				...state,
-				toDo: todoManager.toggleIsChecked({ ...{ ...context, data: todo }}),
+				toDos: todoManager.toggleIsChecked({ ...{ ...context, data: todo }}),
 			}) }
 		/>
 	);

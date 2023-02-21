@@ -1,17 +1,17 @@
 import { rndString } from '@laufire/utils/random';
 
-const addId = ({ state: { toDo, currentValue }, config: { idLength }}) =>
-	[...toDo,
+const addId = ({ state: { toDos, currentValue }, config: { idLength }}) =>
+	[...toDos,
 		{ ...currentValue, id: rndString(idLength),
 			isChecked: false }];
 
-const remove = ({ state: { toDo }, data: todo }) =>
-	toDo.filter((value) => value.id !== todo.id);
+const remove = ({ state: { toDos }, data: todo }) =>
+	toDos.filter((value) => value.id !== todo.id);
 
 const toggleIsChecked = (context) => {
-	const { state: { toDo }, data: todo } = context;
+	const { state: { toDos }, data: todo } = context;
 
-	return toDo.map((value) => {
+	return toDos.map((value) => {
 		const { isChecked } = value;
 
 		return value.id === todo.id
@@ -21,9 +21,9 @@ const toggleIsChecked = (context) => {
 };
 
 const isEdited = (context) => {
-	const { state: { currentValue, toDo }} = context;
+	const { state: { currentValue, toDos }} = context;
 
-	return toDo.map((value) => (value.id === currentValue.id
+	return toDos.map((value) => (value.id === currentValue.id
 		? currentValue
 		: value));
 };

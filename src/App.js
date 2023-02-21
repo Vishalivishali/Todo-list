@@ -1,13 +1,13 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Buttons from './components/Buttons';
+import ActionButton from './components/ActionButton';
 import ClearAllButton from './components/ClearAllButton';
-import Display from './components/Display';
 import TextBox from './components/TextBox';
+import TodoList from './components/ToDoList';
 
 const initialState = () => ({
 	currentValue: { name: '' },
-	toDo: [],
+	toDos: [],
 	isEdit: false,
 });
 
@@ -17,8 +17,8 @@ const App = (context) => {
 
 	return <div className="App">
 		<TextBox { ...extendedContext }/>
-		<Buttons { ...extendedContext }/>
-		<Display { ...extendedContext }/>
+		<ActionButton { ...extendedContext }/>
+		<TodoList { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
 	</div>;
 };

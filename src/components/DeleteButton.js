@@ -13,7 +13,7 @@ const DeleteButton = (context) => {
 			onClick={ () =>
 				setState({
 					...state,
-					toDo: todoManager.remove(context),
+					toDos: todoManager.remove(context),
 				}) }
 			variant="contained"
 			color="error"

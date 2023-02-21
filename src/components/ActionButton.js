@@ -3,7 +3,7 @@ import React from 'react';
 import AddButton from './AddButton';
 import EditButton from './EditButton';
 
-const Buttons = (context) => {
+const ActionButton = (context) => {
 	const { state: { isEdit }} = context;
 
 	return (
@@ -15,4 +15,4 @@ const Buttons = (context) => {
 	);
 };
 
-export default Buttons;
+export default ActionButton;
