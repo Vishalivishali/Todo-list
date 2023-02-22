@@ -20,6 +20,12 @@ const toggleIsChecked = (context) => {
 	});
 };
 
+const toggleIsSelected = (context) => {
+	const { state: { toDos }, data: checked } = context;
+
+	return toDos.map((todoValue) => ({ ...todoValue, isChecked: checked	}));
+};
+
 const isEdited = (context) => {
 	const { state: { currentValue, toDos }} = context;
 
@@ -36,6 +42,7 @@ const todoManager = {
 	addId,
 	remove,
 	toggleIsChecked,
+	toggleIsSelected,
 	isEdited,
 	reName,
 	isItemSelected,

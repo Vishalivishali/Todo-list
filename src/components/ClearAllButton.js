@@ -8,6 +8,7 @@ const ClearAllButton = (context) => {
 	return (
 		<Button
 			className="clearAll"
+			disabled={ !toDos.some((todo) => todo.isChecked) }
 			onClick={ () => setState({
 				...state, toDos: toDos.filter((data) => data.isChecked !== true),
 			}) }
