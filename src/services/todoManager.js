@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { rndString } from '@laufire/utils/random';
 
 const addId = ({ state: { toDos, currentValue }, config: { idLength }}) =>
@@ -36,7 +37,11 @@ const isEdited = (context) => {
 
 const reName = () => null;
 
-const isItemSelected = ({ state: { currentValue: { id }}}) => !id;
+const filteredValue = {
+	all: ({ state: { toDos }}) => toDos,
+	active: ({ state: { toDos }}) => toDos.filter((data) => !data.isChecked),
+	completed: ({ state: { toDos }}) => toDos.filter((data) => data.isChecked),
+};
 
 const todoManager = {
 	addId,
@@ -45,7 +50,7 @@ const todoManager = {
 	toggleIsSelected,
 	isEdited,
 	reName,
-	isItemSelected,
+	filteredValue,
 };
 
 export default todoManager;

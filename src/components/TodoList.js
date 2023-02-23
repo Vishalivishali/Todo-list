@@ -3,11 +3,14 @@ import { Box } from '@mui/material';
 import React from 'react';
 import DeleteButton from './DeleteButton';
 import CheckBox from './CheckBox';
+import todoManager from '../services/todoManager';
 
 const TodoList = (context) => {
-	const { state: { toDos, isEdit }, setState } = context;
+	const { state: { isEdit, filter }, setState } = context;
 
-	return toDos.map((todo, key) =>
+	const filters = todoManager.filteredValue[filter](context);
+
+	return filters.map((todo, key) =>
 		<div key={ key }>
 			<CheckBox { ...{ ...context, data: todo } }/>
 			<Box
