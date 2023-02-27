@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Box } from '@mui/material';
 import todoManager from '../services/todoManager';
 
-const AddButton = (context) => {
+const AddTodoButton = (context) => {
 	const { setState, state: { currentValue }} = context;
 
 	return (
@@ -25,4 +25,4 @@ const AddButton = (context) => {
 	);
 };
 
-export default AddButton;
+export default AddTodoButton;

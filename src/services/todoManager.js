@@ -9,9 +9,6 @@ const addId = ({ state: { toDos, currentValue }, config: { idLength }}) =>
 const remove = ({ state: { toDos }, data: todo }) =>
 	toDos.filter((value) => value.id !== todo.id);
 
-const removeName = ({ state: { tasks }, data: task }) =>
-	tasks.filter((value) => value.id !== task.id);
-
 const toggleIsChecked = (context) => {
 	const { state: { toDos }, data: todo } = context;
 
@@ -46,18 +43,14 @@ const filteredValue = {
 	completed: ({ state: { toDos }}) => toDos.filter((data) => data.isChecked),
 };
 
-const genData = ({ state: { tasks }, config: { idLength }}) => tasks.map((task) => ({ ...task, id: rndString(idLength) }));
-
 const todoManager = {
 	addId,
 	remove,
-	removeName,
 	toggleIsChecked,
 	toggleIsSelected,
 	isEdited,
 	reName,
 	filteredValue,
-	genData,
 };
 
 export default todoManager;

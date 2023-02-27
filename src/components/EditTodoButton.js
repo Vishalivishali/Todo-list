@@ -2,7 +2,7 @@ import { Button, Box } from '@mui/material';
 import React from 'react';
 import todoManager from '../services/todoManager';
 
-const EditButton = (context) => {
+const EditTodoButton = (context) => {
 	const { setState, state, state: { isEdit }} = context;
 
 	return (
@@ -20,4 +20,4 @@ const EditButton = (context) => {
 	);
 };
 
-export default EditButton;
+export default EditTodoButton;

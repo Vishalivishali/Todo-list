@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import React from 'react';
 import todoManager from '../services/todoManager';
 
-const DeleteButton = (context) => {
+const DeleteTodoButton = (context) => {
 	const { state, setState } = context;
 
 	return (
@@ -24,4 +24,4 @@ const DeleteButton = (context) => {
 	);
 };
 
-export default DeleteButton;
+export default DeleteTodoButton;

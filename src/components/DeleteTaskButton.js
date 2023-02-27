@@ -2,9 +2,9 @@
 /* eslint-disable id-length */
 import { Button } from '@mui/material';
 import React from 'react';
-import todoManager from '../services/todoManager';
+import taskManager from '../services/taskManager';
 
-const Delete = (context) => {
+const DeleteTaskButton = (context) => {
 	const { state, setState } = context;
 
 	return (
@@ -12,7 +12,7 @@ const Delete = (context) => {
 			onClick={ () =>
 				setState({
 					...state,
-					tasks: todoManager.removeName(context),
+					tasks: taskManager.removeTask(context),
 				}) }
 			variant="contained"
 			color="error"
@@ -23,4 +23,4 @@ const Delete = (context) => {
 	);
 };
 
-export default Delete;
+export default DeleteTaskButton;

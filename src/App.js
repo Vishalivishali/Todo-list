@@ -8,14 +8,15 @@ import Completed from './components/Completed';
 import SelectAllCheckbox from './components/SelectAllCheckbox';
 import TextBox from './components/TextBox';
 import TodoList from './components/TodoList';
-import TaskData from './components/TaskData';
+import TaskList from './components/TaskList';
+import taskManager from './services/taskManager';
 
-const initialState = ({ config: { datas }}) => ({
+const initialState = (context) => ({
 	currentValue: { name: '' },
 	toDos: [],
 	isEdit: false,
 	filter: 'all',
-	tasks: datas,
+	tasks: taskManager.genData(context),
 });
 
 const App = (context) => {
@@ -31,7 +32,7 @@ const App = (context) => {
 		<SelectAllCheckbox { ...extendedContext }/>
 		<TodoList { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
-		<TaskData { ...extendedContext }/>
+		<TaskList { ...extendedContext }/>
 	</div>;
 };
 

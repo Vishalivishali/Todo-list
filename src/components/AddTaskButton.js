@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Button, Box } from '@mui/material';
-import todoManager from '../services/todoManager';
+import taskManager from '../services/taskManager';
 
-const Add = (context) => {
+const AddTaskButton = (context) => {
 	const { setState, state: { toDos }, data: task } = context;
 
 	return (
@@ -11,8 +11,8 @@ const Add = (context) => {
 			<Button
 				onClick={ () =>
 					setState((state) => ({ ...state,
-						toDos: [...toDos, task],
-						tasks: todoManager.removeName(context) })) }
+						toDos: [...toDos, { ...task, isChecked: false }],
+						tasks: taskManager.removeTask(context) })) }
 				variant="contained"
 				color="error"
 				size="small"
@@ -23,4 +23,4 @@ const Add = (context) => {
 	);
 };
 
-export default Add;
+export default AddTaskButton;

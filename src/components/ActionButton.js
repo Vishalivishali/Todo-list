@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import AddButton from './AddButton';
-import EditButton from './EditButton';
+import AddTodoButton from './AddTodoButton';
+import EditTodoButton from './EditTodoButton';
 
 const ActionButton = (context) => {
 	const { state: { isEdit }} = context;
@@ -9,8 +9,8 @@ const ActionButton = (context) => {
 	return (
 		<Box>
 			{isEdit
-				? <EditButton { ...context }/>
-				: <AddButton { ...context }/>}
+				? <EditTodoButton { ...context }/>
+				: <AddTodoButton { ...context }/>}
 		</Box>
 	);
 };

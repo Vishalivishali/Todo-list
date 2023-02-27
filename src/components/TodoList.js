@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { Box } from '@mui/material';
 import React from 'react';
-import DeleteButton from './DeleteButton';
+import DeleteTodoButton from './DeleteTodoButton';
 import CheckBox from './CheckBox';
 import todoManager from '../services/todoManager';
 
@@ -20,7 +20,7 @@ const TodoList = (context) => {
 					currentValue: todo,
 				})) }
 			>{todo.name}</Box>
-			<DeleteButton { ...{ ...context, data: todo } }/>
+			<DeleteTodoButton { ...{ ...context, data: todo } }/>
 		</div>);
 };
 
