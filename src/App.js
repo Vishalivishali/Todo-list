@@ -8,11 +8,14 @@ import Completed from './components/Completed';
 import SelectAllCheckbox from './components/SelectAllCheckbox';
 import TextBox from './components/TextBox';
 import TodoList from './components/TodoList';
-const initialState = () => ({
+import TaskData from './components/TaskData';
+
+const initialState = ({ config: { datas }}) => ({
 	currentValue: { name: '' },
 	toDos: [],
 	isEdit: false,
 	filter: 'all',
+	tasks: datas,
 });
 
 const App = (context) => {
@@ -28,6 +31,7 @@ const App = (context) => {
 		<SelectAllCheckbox { ...extendedContext }/>
 		<TodoList { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
+		<TaskData { ...extendedContext }/>
 	</div>;
 };
 

@@ -6,10 +6,12 @@ const Completed = (context) => {
 
 	return (
 		<Button
+			className="completed"
 			onClick={ () => setState({
 				...state,
 				filter: 'completed',
 			}) }
+			color="success"
 		>
 			Completed
 		</Button>
