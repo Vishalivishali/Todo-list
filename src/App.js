@@ -1,9 +1,8 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Todo from './components/Todo/Todo';
-import Buttons from './components/Buttons/Buttons';
-import Task from './components/Task/Task';
+import TaskPanel from './components/Task/TaskPanel';
 import taskManager from './services/taskManager';
+import TodoPanel from './components/Todo/TodoPanel';
 
 const initialState = {
 	currentValue: { name: '' },
@@ -19,12 +18,12 @@ const App = (context) => {
 	const extendedContext = { ...{ ...context, state, setState }};
 	const { once } = context;
 
-	once(() => taskManager.autoGenName(extendedContext));
+	once(() => taskManager.autoGenTask(extendedContext));
 
 	return <div className="App">
-		<Todo { ...extendedContext }/>
-		<Buttons { ...extendedContext }/>
-		<Task { ...extendedContext }/>
+		<TodoPanel { ...extendedContext }/>
+		<filterBar { ...extendedContext }/>
+		<TaskPanel { ...extendedContext }/>
 	</div>;
 };
 

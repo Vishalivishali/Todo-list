@@ -7,12 +7,12 @@ const SelectAllCheckbox = (context) => {
 	const { state: { toDos }, setState, state } = context;
 
 	return (
-		<Box>
+		<Box className="select">
 			<Checkbox
 				checked={ toDos.length
 					&& toDos.every((data) => data.isChecked) }
 				onClick={ ({ target: { checked }}) => setState({ ...state,
-					toDos: todoManager.toggleIsSelected({ ...{ ...context, data: checked }}) }) }
+					toDos: todoManager.toggleTodos({ ...{ ...context, data: checked }}) }) }
 			/>
 			SELECT ALL
 		</Box>

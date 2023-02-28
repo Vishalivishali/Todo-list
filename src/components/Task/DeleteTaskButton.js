@@ -10,6 +10,7 @@ const DeleteTaskButton = (context) => {
 	return (
 		<Box>
 			<Button
+				className="minus"
 				onClick={ () =>
 					setState({
 						...state,

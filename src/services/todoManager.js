@@ -6,10 +6,10 @@ const addId = ({ state: { toDos, currentValue }, config: { idLength }}) =>
 		{ ...currentValue, id: rndString(idLength),
 			isChecked: false }];
 
-const remove = ({ state: { toDos }, data: todo }) =>
+const removeTodo = ({ state: { toDos }, data: todo }) =>
 	toDos.filter((value) => value.id !== todo.id);
 
-const toggleIsChecked = (context) => {
+const toggleTodo = (context) => {
 	const { state: { toDos }, data: todo } = context;
 
 	return toDos.map((value) => {
@@ -21,7 +21,7 @@ const toggleIsChecked = (context) => {
 	});
 };
 
-const toggleIsSelected = (context) => {
+const toggleTodos = (context) => {
 	const { state: { toDos }, data: checked } = context;
 
 	return toDos.map((todoValue) => ({ ...todoValue, isChecked: checked	}));
@@ -37,7 +37,7 @@ const isEdited = (context) => {
 
 const reName = () => null;
 
-const filteredValue = {
+const filterTodos = {
 	all: ({ state: { toDos }}) => toDos,
 	active: ({ state: { toDos }}) => toDos.filter((data) => !data.isChecked),
 	completed: ({ state: { toDos }}) => toDos.filter((data) => data.isChecked),
@@ -45,12 +45,12 @@ const filteredValue = {
 
 const todoManager = {
 	addId,
-	remove,
-	toggleIsChecked,
-	toggleIsSelected,
+	removeTodo,
+	toggleTodo,
+	toggleTodos,
 	isEdited,
 	reName,
-	filteredValue,
+	filterTodos,
 };
 
 export default todoManager;

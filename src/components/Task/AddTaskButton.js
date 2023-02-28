@@ -9,15 +9,15 @@ const AddTaskButton = (context) => {
 	return (
 		<Box>
 			<Button
+				className="plus"
 				onClick={ () =>
 					setState((state) => ({ ...state,
 						toDos: [...toDos, { ...task, isChecked: false }],
 						tasks: taskManager.removeTask(context) })) }
-				variant="contained"
-				color="error"
+				color="secondary"
 				size="small"
 			>
-				+
+				+ Add
 			</Button>
 		</Box>
 	);

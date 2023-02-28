@@ -6,22 +6,47 @@
 		font-weight: bold;
 	}
 
+.input {
+	top: 170px;
+	left: -400px;
+}
+
+.inputName {
+	top: 50%;
+	left: 750px;
+}
+
 .add {
-	top: -48px;
-	left: 170px;
+	top: 123px;
+	left: -200px;
 }
 
 .delete {
-	top: -25px;
-	left: 140px;
+	top: -18px;
+	left: 90px;
 }
 
 .checkbox {
 	top: 30px;
-	left: -100px;
+	left: -50px;
 }
 
-.task {
+.name {
+	margin-top: -20px;
+	margin-left: 600px;
+}
+
+.plus {
 	top: -20px;
-	left: 300px;
+	left: 400px;
+}
+
+.minus {
+	top: -50px;
+	left: 480px;
+}
+
+.select {
+	top: 50px;
+	left: -600px;
 }

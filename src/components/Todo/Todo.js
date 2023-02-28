@@ -1,17 +1,23 @@
+import { Box, Checkbox } from '@mui/material';
 import React from 'react';
-import ActionButton from './ActionButton';
-import ClearAllButton from './ClearAllButton';
-import SelectAllCheckbox from './SelectAllCheckbox';
-import TextBox from './TextBox';
-import TodoList from './TodoList';
+import DeleteTodoButton from './DeleteTodoButton';
 
-const Todo = (context) =>
-	<div>
-		<TextBox { ...context }/>
-		<ActionButton { ...context }/>
-		<SelectAllCheckbox { ...context }/>
-		<TodoList { ...context }/>
-		<ClearAllButton { ...context }/>
-	</div>;
+const Todo = (context) => {
+	const { setState, data: todo, state: { isEdit }} = context;
+
+	return (
+		<div>
+			<Checkbox { ...{ ...context, data: todo } }/>
+			<Box
+				className="inputName"
+				onClick={ () => setState((state) => ({
+					...state,
+					isEdit: !isEdit,
+					currentValue: todo,
+				})) }
+			>{todo.name}</Box>
+			<DeleteTodoButton { ...{ ...context, data: todo } }/>
+		</div>);
+};
 
 export default Todo;

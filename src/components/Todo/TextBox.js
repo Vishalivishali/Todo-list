@@ -8,6 +8,7 @@ const TextBox = (context) => {
 
 	return (
 		<TextField
+			className="input"
 			placeholder="To-Do :)"
 			value={ peek(currentValue.name) }
 			onChange={ ({ target: { value }}) =>

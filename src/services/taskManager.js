@@ -6,19 +6,19 @@ const removeTask = ({ state: { tasks }, data: task }) =>
 const genData = ({ config: { datas, idLength }}) =>
 	datas.map((task) => ({ name: task, id: rndString(idLength) }));
 
-const genName = ({ config: { datas, idLength }}) =>
+const generateTask = ({ config: { datas, idLength }}) =>
 	({
 		name: rndValue(datas),
 		id: rndString(idLength),
 	});
 
-const autoGenName = (context) => {
+const autoGenTask = (context) => {
 	const { setState, config: { delayTime }} = context;
 
 	return setInterval(() => setState((newState) => {
 		const { tasks, autoGenLimit } = newState;
 		const generatedName = tasks.length < autoGenLimit
-			? [...tasks, genName(context)]
+			? [...tasks, generateTask(context)]
 			: tasks;
 
 		return {
@@ -30,8 +30,8 @@ const autoGenName = (context) => {
 const taskManager = {
 	removeTask,
 	genData,
-	genName,
-	autoGenName,
+	generateTask,
+	autoGenTask,
 };
 
 export default taskManager;
