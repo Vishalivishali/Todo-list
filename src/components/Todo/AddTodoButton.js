@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Button, Box } from '@mui/material';
-import todoManager from '../services/todoManager';
+import todoManager from '../../services/todoManager';
 
 const AddTodoButton = (context) => {
 	const { setState, state: { currentValue }} = context;
 
 	return (
-		<Box className="add">
+		<Box>
 			<Button
 				className="add"
 				disabled={ !currentValue.name }

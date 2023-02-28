@@ -2,7 +2,7 @@
 /* eslint-disable id-length */
 import { Button } from '@mui/material';
 import React from 'react';
-import taskManager from '../services/taskManager';
+import taskManager from '../../services/taskManager';
 
 const DeleteTaskButton = (context) => {
 	const { state, setState } = context;

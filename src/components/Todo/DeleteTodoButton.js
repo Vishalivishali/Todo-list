@@ -2,14 +2,13 @@
 /* eslint-disable id-length */
 import { Button } from '@mui/material';
 import React from 'react';
-import todoManager from '../services/todoManager';
+import todoManager from '../../services/todoManager';
 
 const DeleteTodoButton = (context) => {
 	const { state, setState } = context;
 
 	return (
 		<Button
-			className="delete"
 			onClick={ () =>
 				setState({
 					...state,

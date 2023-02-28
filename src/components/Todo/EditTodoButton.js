@@ -1,12 +1,12 @@
 import { Button, Box } from '@mui/material';
 import React from 'react';
-import todoManager from '../services/todoManager';
+import todoManager from '../../services/todoManager';
 
 const EditTodoButton = (context) => {
 	const { setState, state, state: { isEdit }} = context;
 
 	return (
-		<Box className="add">
+		<Box>
 			<Button
 				onClick={ () => setState({ ...state,
 					toDos: todoManager.isEdited(context),

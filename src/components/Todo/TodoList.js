@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import React from 'react';
 import DeleteTodoButton from './DeleteTodoButton';
 import CheckBox from './CheckBox';
-import todoManager from '../services/todoManager';
+import todoManager from '../../services/todoManager';
 
 const TodoList = (context) => {
 	const { state: { isEdit, filter }, setState } = context;
