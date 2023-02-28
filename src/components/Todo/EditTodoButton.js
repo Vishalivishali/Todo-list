@@ -8,6 +8,7 @@ const EditTodoButton = (context) => {
 	return (
 		<Box>
 			<Button
+				className="add"
 				onClick={ () => setState({ ...state,
 					toDos: todoManager.isEdited(context),
 					isEdit: !isEdit }) }

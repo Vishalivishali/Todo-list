@@ -9,6 +9,7 @@ const DeleteTodoButton = (context) => {
 
 	return (
 		<Button
+			className="delete"
 			onClick={ () =>
 				setState({
 					...state,

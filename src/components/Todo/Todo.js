@@ -8,10 +8,10 @@ import TodoList from './TodoList';
 const Todo = (context) =>
 	<div>
 		<TextBox { ...context }/>
+		<ActionButton { ...context }/>
 		<SelectAllCheckbox { ...context }/>
 		<TodoList { ...context }/>
 		<ClearAllButton { ...context }/>
-		<ActionButton { ...context }/>
 	</div>;
 
 export default Todo;

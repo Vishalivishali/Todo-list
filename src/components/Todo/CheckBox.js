@@ -8,6 +8,7 @@ const CheckBox = (context) => {
 
 	return (
 		<Checkbox
+			className="checkbox"
 			checked={ todo.isChecked }
 			onClick={ () => setState({
 				...state,
