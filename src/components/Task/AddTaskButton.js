@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Button, Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import taskManager from '../../services/taskManager';
 
 const AddTaskButton = (context) => {
@@ -9,7 +9,7 @@ const AddTaskButton = (context) => {
 	return (
 		<Box>
 			<Button
-				className="plus"
+				sx={ { display: 'inline-block' } }
 				onClick={ () =>
 					setState((state) => ({ ...state,
 						toDos: [...toDos, { ...task, isChecked: false }],

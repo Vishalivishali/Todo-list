@@ -1,9 +1,10 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import TaskList from './TaskList';
 
 const TaskPanel = (context) =>
-	<div>
+	<Box>
 		<TaskList { ...context }/>
-	</div>;
+	</Box>;
 
 export default TaskPanel;

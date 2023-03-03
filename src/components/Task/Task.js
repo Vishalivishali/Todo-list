@@ -7,10 +7,10 @@ const Task = (context) => {
 	const { data: task } = context;
 
 	return (
-		<div>
-			<Box>{task.name}</Box>
+		<Box className="taskContainer">
+			<Box className="taskInput">{task.name}</Box>
 			<AddTaskButton { ...{ ...context, data: task } }/>
-			<DeleteTaskButton { ...{ ...context, data: task } }/></div>);
+			<DeleteTaskButton { ...{ ...context, data: task } }/></Box>);
 };
 
 export default Task;

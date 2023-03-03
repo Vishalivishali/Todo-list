@@ -1,8 +1,9 @@
-import { React, useState } from 'react';
 import './App.scss';
+import { React, useState } from 'react';
+
+import TodoPanel from './components/Todo/TodoPanel';
 import TaskPanel from './components/Task/TaskPanel';
 import taskManager from './services/taskManager';
-import TodoPanel from './components/Todo/TodoPanel';
 
 const initialState = {
 	currentValue: { name: '' },
@@ -10,7 +11,7 @@ const initialState = {
 	isEdit: false,
 	filter: 'all',
 	tasks: [],
-	autoGenLimit: 3,
+	autoGenLimit: 5,
 };
 
 const App = (context) => {
@@ -22,7 +23,6 @@ const App = (context) => {
 
 	return <div className="App">
 		<TodoPanel { ...extendedContext }/>
-		<filterBar { ...extendedContext }/>
 		<TaskPanel { ...extendedContext }/>
 	</div>;
 };

@@ -6,7 +6,6 @@ const Active = (context) => {
 
 	return (
 		<Button
-			className="active"
 			onClick={ () => setState({
 				...state,
 				filter: 'active',

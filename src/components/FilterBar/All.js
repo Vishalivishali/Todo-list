@@ -6,7 +6,6 @@ const All = (context) => {
 
 	return (
 		<Button
-			className="all"
 			onClick={ () => setState({
 				...state,
 				filter: 'all',

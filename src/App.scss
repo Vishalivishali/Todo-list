@@ -1,52 +1,64 @@
 .App {
 	text-align: center;
+	display: flex;
+	height: 100vh;
 }
 
 .button {
 		font-weight: bold;
 	}
 
-.input {
-	top: 170px;
-	left: -400px;
-}
-
-.inputName {
-	top: 50%;
-	left: 750px;
-}
-
 .add {
-	top: 123px;
-	left: -200px;
-}
-
-.delete {
-	top: -18px;
-	left: 90px;
+	top: -45px;
+	left: 170px;
 }
 
 .checkbox {
+	top: 0px;
+	left: -90px;
+}
+
+.delete {
+	top: 5px;
+	left: 80px;
+}
+
+.todoInput {
+	margin-top: 10px;
+	left: -80px;
+}
+
+.todo {
+	width: 50vw;
+	background-color: rgb(122, 199, 247);
+}
+
+.task {
+	display: inline-block;
+	width: 50vw;
+	height: 100vh;
+	background-color: rgb(232, 161, 215);
+}
+
+.taskInput {
 	top: 30px;
-	left: -50px;
+	left: 800px;
 }
 
-.name {
-	margin-top: -20px;
-	margin-left: 600px;
+.container {
+	display: flex;
+	width: 50%;
+	margin-top: 30px;
+	margin-left: 24%;
+	justify-content: center;
+	border: 2px solid black;
 }
 
-.plus {
-	top: -20px;
-	left: 400px;
-}
-
-.minus {
-	top: -50px;
-	left: 480px;
-}
-
-.select {
-	top: 50px;
-	left: -600px;
+.taskContainer {
+	display: flex;
+	width: 40%;
+	margin-top: 30px;
+	margin-left: 40%;
+	justify-content: center;
+	border: 2px solid black;
 }

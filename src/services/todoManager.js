@@ -27,6 +27,12 @@ const toggleTodos = (context) => {
 	return toDos.map((todoValue) => ({ ...todoValue, isChecked: checked	}));
 };
 
+const isAllChecked = (context) => {
+	const { state: { toDos }} = context;
+
+	return toDos.length && toDos.every((data) => data.isChecked === true);
+};
+
 const isEdited = (context) => {
 	const { state: { currentValue, toDos }} = context;
 
@@ -48,6 +54,7 @@ const todoManager = {
 	removeTodo,
 	toggleTodo,
 	toggleTodos,
+	isAllChecked,
 	isEdited,
 	reName,
 	filterTodos,

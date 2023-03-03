@@ -10,7 +10,7 @@ const DeleteTaskButton = (context) => {
 	return (
 		<Box>
 			<Button
-				className="minus"
+				sx={ { display: 'inline-block' } }
 				onClick={ () =>
 					setState({
 						...state,

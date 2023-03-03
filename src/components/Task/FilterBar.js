@@ -1,7 +1,7 @@
 import React from 'react';
-import Active from './Active';
-import All from './All';
-import Completed from './Completed';
+import Active from '../FilterBar/Active';
+import All from '../FilterBar/All';
+import Completed from '../FilterBar/Completed';
 
 const FilterBar = (context) =>
 	<div>

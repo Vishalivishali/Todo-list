@@ -4,15 +4,16 @@ import { Checkbox } from '@mui/material';
 import todoManager from '../../services/todoManager';
 
 const CheckBox = (context) => {
-	const { setState, state, data: todo } = context;
+	const { setState, state, data } = context;
+	const { isChecked } = data;
 
 	return (
 		<Checkbox
 			className="checkbox"
-			checked={ todo.isChecked }
+			checked={ isChecked }
 			onClick={ () => setState({
 				...state,
-				toDos: todoManager.toggleTodo({ ...{ ...context, data: todo }}),
+				toDos: todoManager.toggleTodo({ ...{ ...context, data }}),
 			}) }
 		/>
 	);
